@@ -19,7 +19,7 @@ Execute script with **mem** argument:  `./metrics.sh mem`
 
 ## Docker usage
 
-Run docker with container with command specified in allowed command list
+Run docker container with command specified in allowed commands list
 ##### Example
 
 ```
