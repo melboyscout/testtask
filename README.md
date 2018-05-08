@@ -23,7 +23,7 @@ Run docker with container with command specified in allowed command list
 ##### Example
 
 ```
-docker run -t --rm artem7mag/testtask:latest cpu
+docker run -t --rm artem7mag/metrics:latest cpu
 
 user		17.25 
 nice		0.00 
