@@ -7,7 +7,7 @@
    mem
 ```
 
-##Script usage examples
+## Script usage examples
 
 #### print CPU metrics
 
@@ -17,10 +17,10 @@ Execute script with **cpu** argument: `./metrics.sh cpu`
 
 Execute script with **mem** argument:  `./metrics.sh mem`
 
-##Docker usage
+## Docker usage
 
 Run docker with container with command specified in allowed command list
-#####Example
+##### Example
 
 ```
 docker run -t --rm artem7mag/testtask:latest cpu
