@@ -1,0 +1,23 @@
+#!/bin/bash
+
+CPU="cpu"
+MEM="mem"
+
+
+if [ "$#" -ne 1 ]
+then
+    echo "Illegal number of parameters $# . Should be 1."
+    exit 1
+fi
+
+COMMAND=$1
+
+if [ $COMMAND = $CPU ]
+then 
+   iostat -c | egrep -v '[a-z]'| egrep  '[0-9]{1,2}.[0-9]{1,2}|[0-9]{1,2},[0-9]{1,2}' | awk 'NR==1{ print "user\t\t" $1,"\nnice\t\t" $2,"\nsystem\t\t" $3,"\niowait\t\t" $4,"\nsteal\t\t" $5,"\nidle\t\t" $6 }' | egrep --color '[a-z]'
+elif [ $COMMAND = $MEM ]
+then 
+    egrep --color 'Mem|Cache|Swap' /proc/meminfo
+else
+    echo "ERROR: Unsupported command $COMMAND. Specify command from command list: $CPU , $MEM "
+fi
